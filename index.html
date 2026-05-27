@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <input type="number" id="wiekInput" placeholder="Wpisz wiek">
+    <button onclick="sprawdz()">Sprawdź</button>
+
+    <p id="wynik"></p>
+
+    <script>
+        function sprawdz() {
+            const wiek = (document.getElementById('wiekInput').value);
+            const wynik = document.getElementById('wynik');
+
+            if (isNaN(wiek)) {
+                wynik.innerHTML = "Podaj liczbę!";
+            } else if (wiek < 18) {
+                wynik.innerHTML = "Masz mniej niż 18 lat. Nie możesz: być prezydentem i prowadzić auta.";
+            } else if (wiek >= 18 && wiek <= 50) {
+                wynik.innerHTML = "Masz 18-50 lat. Możesz: brać kredyty.";
+            } else {
+                wynik.innerHTML = "Masz powyżej 50 lat. Nie możesz: startować w zawodach juniorskich.";
+            }
+        }
+    </script>
+
+</body>
+</html>
